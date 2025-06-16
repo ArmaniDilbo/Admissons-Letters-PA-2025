@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Congratulations!</title>
+  <!-- Confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <style>
+    /* Make sizing predictable */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f2f2f2;
+      font-family: 'Times New Roman', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Top banner */
+    .banner {
+      width: 100%;
+      height: 25vh;
+      min-height: 150px;
+      background: url('https://images.unsplash.com/photo-1555424221-250de2a343ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1762&q=80')
+                  no-repeat center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+    }
+    .banner h2 {
+      color: white;
+      font-size: 2em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+      text-align: center;
+      margin: 0;
+    }
+
+    /* Letter container adjusts to screen size */
+    .letter-container {
+      position: relative;
+      background: white;
+      width: 90%;
+      padding: 2rem;
+      margin-top: -4rem; /* overlap banner */
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      border: 1px solid #ccc;
+      overflow: hidden;
+    }
+    .letter-container::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      max-width: 60%;
+      opacity: 0.05;
+      transform: translate(-50%, -50%);
+      background: url('pa-outline.svg') no-repeat center/contain;
+      pointer-events: none;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #00457C;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+      margin: 0.75rem 0;
+    }
+    .signature {
+      margin-top: 2rem;
+      text-align: right;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    /* Smaller screens */
+    @media (max-width: 600px) {
+      .banner {
+        height: 30vh;
+      }
+      .banner h2 {
+        font-size: 1.4em;
+      }
+      .letter-container {
+        margin-top: -3rem;
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <h2>Pennsylvania United States Cup Team Admissons</h2>
+  </div>
+
+  <div class="letter-container">
+    <h1>Congratulations!</h1>
+    <p><em>June 15, 2025</em></p>
+
+    <p>Dear <strong>BlueChinchompa</strong>,</p>
+
+    <p>On behalf of the Admissions Committee at the Pennsylvania United States Cup Admissions Committee, it is my pleasure to offer you admission to the Pennsylvania United States Cup Team. Your tryout performance greatly impressed the admissions team, including top scores on the Double Time maps and fantastic all-around scores on the Hidden and No-Mod.</p>
+
+ <p>Additionally, the committee has taken notes on your previous performance in the United States Cup, including the top carry performance against Florida, bringing Pennsylvania to its highest placement ever.  In your best skillsets, you shined, and even when you had to fill skillsets, your performance was still exemplary.  We are ecstatic to welcome you back on the team for both the standout tryout scores, impressive performance in solo and community tournaments, and ability to scale to even the hardest of mappools.</p>
+
+    <p>Once again, congratulations and best of luck in the up-incoming matches!</p>
+
+    <div class="signature">
+      Sincerely,<br>
+      ArmaniDilbo<br>
+      Dean of Admissions
+    </div>
+  </div>
+
+
+
+  <script>
+  window.addEventListener('load', () => {
+   
+
+    const end = Date.now() + 3 * 1000;
+    (function frame() {
+      confetti({ particleCount: 2, angle: 60, spread: 55, origin: { x: 0 } });
+      confetti({ particleCount: 2, angle: 120, spread: 55, origin: { x: 1 } });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    })();
+  });
+</script>
+</body>
+</html>
