@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Congratulations!</title>
+  <!-- Confetti library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <style>
+    /* Make sizing predictable */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f2f2f2;
+      font-family: 'Times New Roman', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Top banner */
+    .banner {
+      width: 100%;
+      height: 25vh;
+      min-height: 150px;
+      background: url('https://images.unsplash.com/photo-1555424221-250de2a343ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1762&q=80')
+                  no-repeat center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+    }
+    .banner h2 {
+      color: white;
+      font-size: 2em;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+      text-align: center;
+      margin: 0;
+    }
+
+    /* Letter container adjusts to screen size */
+    .letter-container {
+      position: relative;
+      max-width: 750px;
+      background: white;
+      width: 90%;
+      padding: 2rem;
+      margin-top: -4rem; /* overlap banner */
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      border: 1px solid #ccc;
+      overflow: hidden;
+    }
+    .letter-container::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      max-width: 60%;
+      opacity: 0.05;
+      transform: translate(-50%, -50%);
+      background: url('pa-outline.svg') no-repeat center/contain;
+      pointer-events: none;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #00457C;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+      margin: 0.75rem 0;
+    }
+    .signature {
+      margin-top: 2rem;
+      text-align: right;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    /* Smaller screens */
+    @media (max-width: 600px) {
+      .banner {
+        height: 30vh;
+      }
+      .banner h2 {
+        font-size: 1.4em;
+      }
+      .letter-container {
+        margin-top: -3rem;
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <h2>Pennsylvania United States Cup Team Admissons</h2>
+  </div>
+
+  <div class="letter-container">
+    <h1>Congratulations!</h1>
+    <p><em>June 15, 2025</em></p>
+
+    <p>Dear <strong>Sunwraith</strong>,</p>
+
+    <p>On behalf of the Admissions Committee at the Pennsylvania United States Cup Admissions Committee, I am pleased to offer you admission to the Pennsylvania United States Cup Team.  You have worked tirelessly this year, pushing yourself to ability to play speed, Double Time, and high-ar resulting in dramatic improvement to your skill-ceiling and Hard Rock consistency.  Your tryout and scrimmage performance shined this year, surprising us with great scores on HR1, HR3, HD1, and NM6, showcasing how far you have come from your first appearance in 2023 and how you will be an important member of this year's United States Cup team.</p>
+
+ <p>While these strengths in Aim, Hidden, and Low-Ar do not surprise us, what separated this year from the previous years was how you’ve managed to scale your skillsets to open-rank Finals mappools.  This dedication to the game, to improving yourself, and your ability to cover skillsets Pennsylvania desperately needs puts you at the top of the list for this year's potential players. As such, we are ecstatic to have you join us this year in the Pennsylvania United States Cup Team.</p>
+
+    <p>Once again, congratulations and best of luck in the up-incoming matches!</p>
+
+    <div class="signature">
+      Sincerely,<br>
+      ArmaniDilbo<br>
+      Dean of Admissions
+    </div>
+  </div>
+
+
+  <script>
+window.addEventListener('load', () => {
+  const duration = 3 * 1000;    // total run time
+  const end = Date.now() + duration;
+
+  (function frame() {
+    // left‐edge burst
+    confetti({
+      particleCount: 2,
+      angle: 60,
+      spread: 100,          // wider cone
+      startVelocity: 120,    // faster launch
+      gravity: 1.2,         // floatier
+      ticks: 300,           // longer life
+      origin: { x: 0, y: 0.4 } // start a bit lower
+    });
+    // right‐edge burst
+    confetti({
+      particleCount: 2,
+      angle: 120,
+      spread: 100,
+      startVelocity: 120,
+      gravity: 1.2,
+      ticks: 300,
+      origin: { x: 1, y: 0.4 }
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+});
+</script>
+</body>
+</html>
