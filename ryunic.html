@@ -116,11 +116,11 @@
     <h1>Congratulations!</h1>
     <p><em>June 15, 2025</em></p>
 
-    <p>Dear <strong>Bunnylikemoney</strong>,</p>
+    <p>Dear <strong>ryunic</strong>,</p>
 
-    <p>On behalf of the Admissions Committee at the Pennsylvania United States Cup Admissions Committee, it is my pleasure to offer you admission to the Pennsylvania United States Cup Team.  Throughout the year, you have shined in community tournaments, and have proven yourself to be one of the best in the world.  In solo, you achieved some of the greatest flow-aim players this year and branched out your skills to include mastery of all mechanics, and an increasingly hard-to-ignore strength in tech, aim control, and speed. Simply put, you are the greatest player in the history of Pennsylvania, and again and again surprised the Admissions committee with your development in tournaments and as a well-rounded solo player.</p>
+    <p>On behalf of the Pennsylvania United States Cup Admissions Committee, I am pleased to offer you admission to the Pennsylvania United States Cup Team. You have worked tirelessly this year, pushing your mechanics, and farming to reach the 2nd spot of the Pennsylvanian players.  But it wasn’t just your rapid movement in the ranks that impressed the committee.  Despite being new to tournaments, you have shown a drive to improve other aspects of your play, including strong flow aim, speed/stamina, and DT tech.  Your scores in the scrimmage and tryouts were strong, with great scores on the Tie Breaker, the Double Time maps, and NM6.</p>
 
-    <p>Last year, you were the pivotal player in bringing Pennsylvania to the Top 8 states. Within the Pennsylvania Scrimmage and tryouts, you displayed dominance in all mechanics and comfort even at the Finals level of mappools.  As such, we are ecstatic to welcome you back to the team and look forward to the undoubtedly incredible performance you will display this year.</p>
+ <p>This quick improvement is deeply exciting and highly suggestive of a strong future tournament player.  As such, we extend this spot on the Pennsylvania United States Cup team to you.  We hope to continue to see you improve, continuing to rise through the ranks and develop your tournament play through the various community tournaments hosted.  Welcome to the Pennsylvanian osu! Community and United States Cup Team ryunic.</p>
 
     <p>Once again, congratulations and best of luck in the up-incoming matches!</p>
 
@@ -133,20 +133,41 @@
 
 
 
+
+
+
   <script>
-  window.addEventListener('load', () => {
-   
+window.addEventListener('load', () => {
+  const duration = 3 * 1000;    // total run time
+  const end = Date.now() + duration;
 
-    const end = Date.now() + 3 * 1000;
-    (function frame() {
-      confetti({ particleCount: 2, angle: 60, spread: 55, origin: { x: 0 } });
-      confetti({ particleCount: 2, angle: 120, spread: 55, origin: { x: 1 } });
+  (function frame() {
+    // left‐edge burst
+    confetti({
+      particleCount: 2,
+      angle: 60,
+      spread: 100,          // wider cone
+      startVelocity: 120,    // faster launch
+      gravity: 1.2,         // floatier
+      ticks: 300,           // longer life
+      origin: { x: 0, y: 0.4 } // start a bit lower
+    });
+    // right‐edge burst
+    confetti({
+      particleCount: 2,
+      angle: 120,
+      spread: 100,
+      startVelocity: 120,
+      gravity: 1.2,
+      ticks: 300,
+      origin: { x: 1, y: 0.4 }
+    });
 
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
-      }
-    })();
-  });
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+});
 </script>
 </body>
 </html>
